@@ -19,5 +19,4 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build . --tag ghcr.io/tctcl/pal-cfg-editor:latest
-        docker run ghcr.io/tctcl/pal-cfg-editor:latest
         docker push ghcr.io/tctcl/pal-cfg-editor:latest
