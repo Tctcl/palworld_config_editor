@@ -1,0 +1,929 @@
+[
+  {
+    "section_name": "GameplaySettings",
+    "section_displayname": "Gameplay settings",
+    "section_description": "Settings that effect Gameplay",
+    "settings": [
+      {
+        "setting_name": "bEnableInvaderEnemy",
+        "setting_displayname": "bEnableInvaderEnemy",
+        "setting_description": "Enables or disables invader enemies.",
+        "setting_default": "True",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "DeathPenalty",
+        "setting_displayname": "DeathPenalty",
+        "setting_description": "Defines the penalty upon player death.",
+        "setting_default": "All",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "None - No drops",
+            "value": "None"
+          },
+          {
+            "name": "Item - Drop all items except equipment",
+            "value": "Item"
+          },
+          {
+            "name": "ItemAndEquipment - Drop all items",
+            "value": "ItemAndEquipment"
+          },
+          {
+            "name": "All - Drop all items and all Pals on team",
+            "value": "All"
+          }
+        ]
+      },
+      {
+        "setting_name": "PalEggDefaultHatchingTime",
+        "setting_displayname": "PalEggDefaultHatchingTime",
+        "setting_description": "Sets the hatching time for Pal eggs. (Before environment bonuses)",
+        "setting_default": 72,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true,
+        "setting_suffix": "hours"
+      },
+      {
+        "setting_name": "bIsPvP",
+        "setting_displayname": "bIsPvP",
+        "setting_description": "Enables or disables PvP (bIsPvP also needs to be enabled).",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bEnablePlayerToPlayerDamage",
+        "setting_displayname": "bEnablePlayerToPlayerDamage",
+        "setting_description": "Enables or disables player to player damage (bIsPvP also needs to be enabled).",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bEnableFriendlyFire",
+        "setting_displayname": "bEnableFriendlyFire",
+        "setting_description": "Enables or disables friendly fire (bIsPvP also needs to be enabled).",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bActiveUNKO",
+        "setting_displayname": "bActiveUNKO",
+        "setting_description": "allows control over ranch drops (not confirmed).",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "DropItemMaxNum_UNKO",
+        "setting_displayname": "DropItemMaxNum_UNKO",
+        "setting_description": "Sets the max amount of UNKO drops (not confirmed).",
+        "setting_default": 100,
+        "setting_type": "number",
+        "setting_step": 1,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "bEnableAimAssistPad",
+        "setting_displayname": "bEnableAimAssistPad",
+        "setting_description": "Lets you enable or disable aim assist for controllers.",
+        "setting_default": "True",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bEnableAimAssistKeyboard",
+        "setting_displayname": "bEnableAimAssistKeyboard",
+        "setting_description": "Lets you enable or disable aim assist for keyboard.",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "DropItemMaxNum",
+        "setting_displayname": "DropItemMaxNum",
+        "setting_description": "Sets the max amount of dropped items in a world.",
+        "setting_default": 3000,
+        "setting_type": "number",
+        "setting_step": 1,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "BaseCampMaxNum",
+        "setting_displayname": "BaseCampMaxNum",
+        "setting_description": "Sets the max amount of base camps in a world.",
+        "setting_default": 128,
+        "setting_type": "number",
+        "setting_step": 1,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "DropItemAliveMaxHours",
+        "setting_displayname": "DropItemAliveMaxHours",
+        "setting_description": "Sets how long dropped items will stay spawned before disappearing.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true,
+        "setting_suffix": "hours"
+      },
+      {
+        "setting_name": "bAutoResetGuildNoOnlinePlayers",
+        "setting_displayname": "bAutoResetGuildNoOnlinePlayers",
+        "setting_description": "If true, a guild will be disbanded if no players are online.",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "AutoResetGuildTimeNoOnlinePlayers",
+        "setting_displayname": "AutoResetGuildTimeNoOnlinePlayers",
+        "setting_description": "How quickly an inactive guild will be disbanded.",
+        "setting_default": 72,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true,
+        "setting_suffix": "hours"
+      },
+      {
+        "setting_name": "AutoSaveSpan",
+        "setting_displayname": "AutoSaveSpan",
+        "setting_description": "Time between auto saves. (not sure if this actually effects servers).",
+        "setting_default": 30,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true,
+        "setting_suffix": "minutes"
+      },
+      {
+        "setting_name": "bIsMultiplay",
+        "setting_displayname": "bIsMultiplay",
+        "setting_description": "Enables or disables multiplayer mode. (not sure if this actually effects servers).",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bCanPickupOtherGuildDeathPenaltyDrop",
+        "setting_displayname": "bCanPickupOtherGuildDeathPenaltyDrop",
+        "setting_description": "Allows picking up death penalty drops from other guilds if set to True.",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bEnableNonLoginPenalty",
+        "setting_displayname": "bEnableNonLoginPenalty",
+        "setting_description": "Enables or disables non-login penalties.",
+        "setting_default": "True",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bEnableFastTravel",
+        "setting_displayname": "bEnableFastTravel",
+        "setting_description": "Enables or disables fast travel.",
+        "setting_default": "True",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bIsStartLocationSelectByMap",
+        "setting_displayname": "bIsStartLocationSelectByMap",
+        "setting_description": "Enables or disables the selection of starting locations on the map.",
+        "setting_default": "True",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bExistPlayerAfterLogout",
+        "setting_displayname": "bExistPlayerAfterLogout",
+        "setting_description": "Enables or disables the existence of players after logout.",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bEnableDefenseOtherGuildPlayer",
+        "setting_displayname": "bEnableDefenseOtherGuildPlayer",
+        "setting_description": "Enables defense against players from other guilds if set to True.",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bInvisibleOtherGuildBaseCampAreaFX",
+        "setting_displayname": "bInvisibleOtherGuildBaseCampAreaFX",
+        "setting_description": "Makes the base camp area of other guilds invisible.",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "CoopPlayerMaxNum",
+        "setting_displayname": "CoopPlayerMaxNum",
+        "setting_description": "Sets the max amount of players in a party.",
+        "setting_default": 4,
+        "setting_type": "number",
+        "setting_step": 1,
+        "setting_min": 0,
+        "setting_required": true,
+        "setting_suffix": "minutes"
+      }
+    ]
+  },
+  {
+    "section_name": "GuildSettings",
+    "section_displayname": "Guild settings",
+    "section_description": "Settings that effect guilds",
+    "settings": [
+      {
+        "setting_name": "BaseCampMaxNumInGuild",
+        "setting_displayname": "BaseCampMaxNumInGuild",
+        "setting_description": "Sets the maximum number of base camps per guild. Larger values increase system load.",
+        "setting_default": 4,
+        "setting_type": "number",
+        "setting_step": 1,
+        "setting_min": 0,
+        "setting_max": 10,
+        "setting_required": true
+      },
+      {
+        "setting_name": "BaseCampWorkerMaxNum",
+        "setting_displayname": "BaseCampWorkerMaxNum",
+        "setting_description": "Sets the maximum number of workers at base camps. Larger values increase system load.",
+        "setting_default": 15,
+        "setting_type": "number",
+        "setting_step": 1,
+        "setting_min": 0,
+        "setting_max": 50,
+        "setting_required": true
+      },
+      {
+        "setting_name": "GuildPlayerMaxNum",
+        "setting_displayname": "GuildPlayerMaxNum",
+        "setting_description": "Sets the maximum number of players in a guild.",
+        "setting_default": 20,
+        "setting_type": "number",
+        "setting_step": 1,
+        "setting_min": 0,
+        "setting_required": true
+      }
+    ]
+  },
+  {
+    "section_name": "RateSettings",
+    "section_displayname": "Rate settings",
+    "section_description": "Settings that effect rates",
+    "settings": [
+      {
+        "setting_name": "BuildObjectDamageRate",
+        "setting_displayname": "BuildObjectDamageRate",
+        "setting_description": "Adjusts the rate at which built objects take damage.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "BuildObjectDeteriorationDamageRate",
+        "setting_displayname": "BuildObjectDeteriorationDamageRate",
+        "setting_description": "Adjusts the rate at which built objects deteriorate.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "CollectionDropRate",
+        "setting_displayname": "CollectionDropRate",
+        "setting_description": "Adjusts the drop rate of collected items.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "CollectionObjectHpRate",
+        "setting_displayname": "CollectionObjectHpRate",
+        "setting_description": "Adjusts the health of collected objects.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "CollectionObjectRespawnSpeedRate",
+        "setting_displayname": "CollectionObjectRespawnSpeedRate",
+        "setting_description": "Adjusts the respawn speed of collected objects.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "DayTimeSpeedRate",
+        "setting_displayname": "DayTimeSpeedRate",
+        "setting_description": "Modifies the speed of in-game time during the day.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "EnemyDropItemRate",
+        "setting_displayname": "EnemyDropItemRate",
+        "setting_description": "Adjusts the drop rate of items from defeated enemies.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "ExpRate",
+        "setting_displayname": "ExpRate",
+        "setting_description": "Changes the experience gain rate for both players and creatures.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "NightTimeSpeedRate",
+        "setting_displayname": "NightTimeSpeedRate",
+        "setting_description": "Modifies the speed of in-game time during the night.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PalAutoHPRegeneRate",
+        "setting_displayname": "PalAutoHPRegeneRate",
+        "setting_description": "Adjusts the rate of automatic Pal creature health regeneration.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PalAutoHpRegeneRateInSleep",
+        "setting_displayname": "PalAutoHpRegeneRateInSleep",
+        "setting_description": "Adjusts the rate of automatic Pal creature health regeneration during sleep.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PalCaptureRate",
+        "setting_displayname": "PalCaptureRate",
+        "setting_description": "Adjusts the rate at which Pal creatures can be captured.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PalDamageRateAttack",
+        "setting_displayname": "PalDamageRateAttack",
+        "setting_description": "Adjusts damage that pals deal. The higher the more Damage.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PalDamageRateDefense",
+        "setting_displayname": "PalDamageRateDefense",
+        "setting_description": "Adjusts damage that pals take. The lower the less Damage.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PalSpawnNumRate",
+        "setting_displayname": "PalSpawnNumRate",
+        "setting_description": "Adjusts the rate at which pals spawn.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PalStaminaDecreaceRate",
+        "setting_displayname": "PalStaminaDecreaceRate",
+        "setting_description": "Adjusts the rate at which Pal creature stomach decreases.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PalStomachDecreaceRate",
+        "setting_displayname": "PalStomachDecreaceRate",
+        "setting_description": "Adjusts the rate at which Pal creature stomach decreases.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PlayerAutoHPRegeneRate",
+        "setting_displayname": "PlayerAutoHPRegeneRate",
+        "setting_description": "Adjusts the rate of automatic player health regeneration.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PlayerAutoHpRegeneRateInSleep",
+        "setting_displayname": "PlayerAutoHpRegeneRateInSleep",
+        "setting_description": "Adjusts the rate of automatic player health regeneration during sleep.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PlayerDamageRateAttack",
+        "setting_displayname": "PlayerDamageRateAttack",
+        "setting_description": "Adjusts the damage players deal. The higher the more Damage.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PlayerDamageRateDefense",
+        "setting_displayname": "PlayerDamageRateDefense",
+        "setting_description": "Adjusts the damage players takes. The lower the less Damage.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PlayerStaminaDecreaceRate",
+        "setting_displayname": "PlayerStaminaDecreaceRate",
+        "setting_description": "Adjusts the rate at which the player's stamina decreases.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "PlayerStomachDecreaceRate",
+        "setting_displayname": "PlayerStomachDecreaceRate",
+        "setting_description": "Adjusts the rate at which the player's stomach decreases.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      },
+      {
+        "setting_name": "WorkSpeedRate",
+        "setting_displayname": "WorkSpeedRate",
+        "setting_description": "Adjusts the rate at which pals work.",
+        "setting_default": 1,
+        "setting_type": "number",
+        "setting_step": 0.01,
+        "setting_min": 0,
+        "setting_required": true
+      }
+    ]
+  },
+  {
+    "section_name": "ServerSettings",
+    "section_displayname": "Server settings",
+    "section_description": "Settings that effect the server",
+    "settings": [
+      {
+        "setting_name": "AdminPassword",
+        "setting_displayname": "AdminPassword",
+        "setting_description": "Sets the password for server administration.",
+        "setting_default": "",
+        "setting_type": "text"
+      },
+      {
+        "setting_name": "AllowConnectPlatform",
+        "setting_displayname": "AllowConnectPlatform",
+        "setting_description": "Sets the platforms that is allowed to connect.",
+        "setting_default": "Steam",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "Steam",
+            "value": "Steam"
+          },
+          {
+            "name": "Xbox",
+            "value": "Xbox"
+          }
+        ]
+      },
+      {
+        "setting_name": "bIsUseBackupSaveData",
+        "setting_displayname": "bIsUseBackupSaveData",
+        "setting_description": "If set, the server's automatic backup will be enabled. Disk load will increase.",
+        "setting_default": "True",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "bShowPlayerList",
+        "setting_displayname": "bShowPlayerList",
+        "setting_description": "If set, the player list can be shown in-game by pressing the ESC key.",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "LogFormatType",
+        "setting_displayname": "LogFormatType",
+        "setting_description": "Sets the server's logging format.",
+        "setting_default": "Text",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_is_advanced": true,
+        "setting_options": [
+          {
+            "name": "Text",
+            "value": "Text"
+          },
+          {
+            "name": "JSON",
+            "value": "JSON"
+          }
+        ]
+      },
+      {
+        "setting_name": "PublicIP",
+        "setting_displayname": "PublicIP",
+        "setting_description": "Sets the public ip for the server.",
+        "setting_default": "",
+        "setting_type": "text",
+        "setting_is_advanced": true
+      },
+      {
+        "setting_name": "PublicPort",
+        "setting_displayname": "PublicPort",
+        "setting_description": "Sets the public port for the server.",
+        "setting_default": 8211,
+        "setting_type": "number",
+        "setting_step": 1,
+        "setting_min": 1,
+        "setting_max": 65535,
+        "setting_is_advanced": true,
+        "setting_required": true
+      },
+      {
+        "setting_name": "RCONEnabled",
+        "setting_displayname": "RCONEnabled",
+        "setting_description": "Enables or disables Remote Console (RCON) for server administration.",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_is_advanced": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "RCONPort",
+        "setting_displayname": "RCONPort",
+        "setting_description": "Sets the public port for the server.",
+        "setting_default": 25575,
+        "setting_type": "number",
+        "setting_step": 1,
+        "setting_min": 1,
+        "setting_max": 65535,
+        "setting_is_advanced": true,
+        "setting_required": true
+      },
+      {
+        "setting_name": "RESTAPIEnabled",
+        "setting_displayname": "RESTAPIEnabled",
+        "setting_description": "Enables or disables the REST API.",
+        "setting_default": "False",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_is_advanced": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "RESTAPIPort",
+        "setting_displayname": "RESTAPIPort",
+        "setting_description": "Sets the public port the REST API.",
+        "setting_default": 8212,
+        "setting_type": "number",
+        "setting_step": 1,
+        "setting_min": 1,
+        "setting_max": 65535,
+        "setting_is_advanced": true,
+        "setting_required": true
+      },
+      {
+        "setting_name": "ServerDescription",
+        "setting_displayname": "ServerDescription",
+        "setting_description": "Provides a description for the Palworld server.",
+        "setting_default": "",
+        "setting_type": "text"
+      },
+      {
+        "setting_name": "ServerName",
+        "setting_displayname": "ServerName",
+        "setting_description": "Sets the name of the Palworld server.",
+        "setting_default": "Pterodactyl powered Palworld Server",
+        "setting_type": "text",
+        "setting_required": true
+      },
+      {
+        "setting_name": "ServerPassword",
+        "setting_displayname": "ServerPassword",
+        "setting_description": "Sets the password for joining the Palworld server.",
+        "setting_default": "",
+        "setting_type": "text"
+      },
+      {
+        "setting_name": "ServerPlayerMaxNum",
+        "setting_displayname": "ServerPlayerMaxNum",
+        "setting_description": "Sets the maximum number of players allowed on the server.",
+        "setting_default": 32,
+        "setting_type": "number",
+        "setting_step": 1,
+        "setting_min": 1,
+        "setting_max": 64,
+        "setting_required": true
+      },
+      {
+        "setting_name": "Region",
+        "setting_displayname": "Region",
+        "setting_description": "Sets the server region.",
+        "setting_default": "",
+        "setting_type": "text"
+      },
+      {
+        "setting_name": "bUseAuth",
+        "setting_displayname": "bUseAuth",
+        "setting_description": "Enables authentication if set to True.",
+        "setting_default": "True",
+        "setting_type": "select",
+        "setting_required": true,
+        "setting_is_advanced": true,
+        "setting_options": [
+          {
+            "name": "True",
+            "value": "True"
+          },
+          {
+            "name": "False",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "setting_name": "BanListURL",
+        "setting_displayname": "BanListURL",
+        "setting_description": "The URL for the ban list.",
+        "setting_default": "https://api.palworldgame.com/api/banlist.txt",
+        "setting_type": "text"
+      }
+    ]
+  }
+]
