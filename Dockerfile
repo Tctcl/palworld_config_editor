@@ -1,5 +1,7 @@
 FROM python:3-alpine
 
+LABEL org.opencontainers.image.source="https://github.com/Tctcl/palworld_config_editor"
+
 RUN apk add --virtual .build-dependencies \
             --no-cache \
             python3-dev \
